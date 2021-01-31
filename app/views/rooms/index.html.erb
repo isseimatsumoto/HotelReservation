@@ -1,0 +1,27 @@
+<div class="room-container-field">
+  <div class="search-results-count">
+    検索結果：<%= @rooms.count %>件
+  </div>
+
+  <div class="row">
+
+      <% @rooms.each do |room| %>
+        <div class="room-item-box">
+          <div class="room-frame-inner">
+            <%= link_to("", "/rooms/#{room.id}") %>
+              <div class="room-image-out">
+                  <% if room.image.attached? %>
+                      <%= image_tag room.image, class: "room-image-show" %>
+                  <% end %>
+              </div>
+              <div class="room-profile">
+                <p class="room-profile-name"><%= room.name %></p>
+                <p class="room-profile-address"><%= room.address %></p>
+                <p class="room-profile-fee"><%= room.fee %>円</p>
+              </div>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
+</div>

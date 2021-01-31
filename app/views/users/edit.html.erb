@@ -1,0 +1,63 @@
+<div class="container-field">
+  <div class="row">
+    <div class="room-user-nav">
+      <ul>
+        <li class="tab-active">アカウント</li>
+      </ul>
+    </div>
+
+    <div class="room-user-view">
+      <div class="room-user-view-box">
+        <div class="update-content">
+          <div>アカウント</div>
+        </div>
+
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <% @user.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+          <div class="update-content">
+           <div class="registration-form-box">  
+              <div class="icon-box">
+                <img class="icon-image" src="<%= "/user_images/#{@current_user.image_name}" %>">
+              </div>
+           </div>
+          </div>
+          <div class="update-content">
+           <div class="registration-form-box">  
+              <label class="registration-title">アイコン画像</label>
+              <input name="image" type="file" class= "registration-form">
+           </div>
+          </div>
+          <div class="update-content">
+           <div class="registration-form-box"> 
+              <label class="registration-title">名前</label>
+              <input name="name" value="<%= @user.name %>" class= "registration-form">
+           </div>
+          </div>
+          <div class="update-content">
+           <div class="registration-form-box"> 
+              <label class="registration-title">メールアドレス</label>
+              <input name="email" value="<%= @user.email %>" class= "registration-form">
+           </div>
+          </div>
+          <div class="update-content">
+           <div class="registration-form-box"> 
+              <label class="registration-title">パスワード</label>
+              <input name="password" value="<%= @user.password %>" class= "registration-form">
+           </div>
+          </div>
+          <div class="update-content">
+            <input type="submit" value="保存" class="registration-form-btn">
+          </div>
+          <div class="update-content">
+            <%= link_to("削除", "/users/#{@user.id}/destroy", {class: "registration-form-btn", method: "post"}) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

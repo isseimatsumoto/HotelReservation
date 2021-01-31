@@ -8,9 +8,56 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   </head>
 
   <body>
+    <header>
+      <div class = "header-inner">
+        <div class = "header-left-nav">
+          <%= link_to("partager", "/",  {class: "site_title"}) %>
+
+              <%= form_with( url: index_path, method: :get, local:true) do |f| %>
+                  <%= f.text_field :search_area, value: params[:search], placeholder: "エリア", class: "topleft-input"%>
+                  <%= f.submit '検索', class: "topleft-search_btn"%>
+              <% end %>
+
+              <%= form_with( url: index_path, method: :get, local:true) do |f| %>
+                  <%= f.text_field :search_keyword, value: params[:search], placeholder: "キーワード", class: "topleft-input"%>
+                  <%= f.submit '検索', class: "topleft-search_btn"%>
+              <% end %>
+
+        </div>
+
+        <div class = "header-right-nav">
+          <% if @current_user %>
+            <img class="top_icon" src="<%= "/user_images/#{@current_user.image_name}" %>">
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}/edit", {class: "top_user_name"}) %>
+            <ul class = "header-nav-menu">
+              <li><%= link_to("ルーム登録", "/rooms/new") %><li>
+              <li><%= link_to("予約済みルーム一覧", "/reservations") %></li>
+              <li><%= link_to("登録済みルーム一覧", "/users/#{@current_user.id}") %></li>
+              <li><%= link_to("設定", "/users/#{@current_user.id}/edit") %></li>
+              <li><%= link_to("ログアウト", "/logout", {method: :post}) %></li>
+            </ul>
+          <% else %>
+            <%= link_to("新規登録", "/signup", {class: "btn-flat-border"}) %>
+            <%= link_to("ログイン", "/login", {class: "btn-flat-border"}) %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <% if flash[:notice] %>
+       <div class="flash">
+         <%= flash[:notice] %>
+       </div>
+    <% end %>
+
     <%= yield %>
+    
+    <footer>
+      <div>© 2020 Partager.INC.</div>
+    </footer>
   </body>
 </html>
