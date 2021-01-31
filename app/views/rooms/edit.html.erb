@@ -1,0 +1,65 @@
+<div class="container-field">
+  <div class="row">
+    <div class="room-user-nav">
+      <ul>
+        <li class="tab-active">基本情報</li>
+      </ul>
+    </div>
+
+    <div class="room-user-view">
+      <div class="room-user-view-box">
+        <div class="update-content">
+          <div>ルーム情報登録</div>
+        </div>
+
+        <%= form_with model: @room, local: true do |f| %>
+          <% @room.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+          <div class="update-content"> 
+           <div class="registration-form-box">  
+              <%= f.label :name ,"ルーム名" ,class: "registration-title" %>
+              <%= f.text_field :name ,placeholder: "ルーム名を入力" ,class: "registration-form" %>
+           </div>
+          </div>
+
+          <div class="update-content">   
+           <div class="registration-form-box">  
+              <%= f.label :introduction ,"ルーム紹介" ,class: "registration-title" %>
+              <%= f.text_area :introduction ,placeholder: "ルーム名を入力" ,class: "registration-form"%>
+           </div>
+          </div>
+
+          <div class="update-content">   
+           <div class="registration-form-box"> 
+              <%= f.label :fee ,"料金" ,class: "registration-title" %>
+              <%= f.text_field :fee ,placeholder: "一日あたりの料金を入力" ,class: "registration-form"%>
+           </div>
+          </div>
+
+          <div class="update-content"> 
+           <div class="registration-form-box">    
+              <%= f.label :address ,"住所" ,class: "registration-title" %>
+              <%= f.text_field :address ,placeholder: "住所を入力" ,class: "registration-form"%>
+           </div>
+          </div>
+
+          <div class="update-content">
+           <div class="registration-form-box">    
+              <%= f.label :image ,"ルーム画像" ,class: "registration-title" %>     
+              <%= f.file_field :image ,class: "registration-form"%>
+           </div>
+          </div>
+
+          <div class="update-content"> 
+            <%= f.submit "登録" ,class: "registration-form-btn"%>
+          </div>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>

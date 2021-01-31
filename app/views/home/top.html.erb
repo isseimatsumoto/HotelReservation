@@ -1,0 +1,41 @@
+<div class ="top">
+    <div class = "top-main">
+        <div class = "content-width">
+            <div class = "form-box">
+                <div class = "form-area">
+                    <div class = "form-area-title">partagerでまだ体験したことのない旅をしよう</div>
+                    <label class = "form-area-label">エリア</label>
+                        <%= form_with( url: index_path, class: 'search_form', method: :get, local:true) do |f| %>
+                            <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "東京", class: "form-area-text"%>
+                            <%= f.submit '探す', class: "form-area-submit" %>
+                        <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "content-width">
+        <div class = "recomend-area-panel">
+            <div class = "recomend-area-panel-title">おすすめのエリア</div>
+                <div class = "recomend-area-panel-box">
+                    <div class = "recomend-area-panel-item">
+                        <span><%= link_to "東京", "/index?search=東京&commit=探す" %></span>
+                        <img class = "panel-image" src = "/pexels-harry-shum-6466587.jpg">
+                    </div>
+                    <div class = "recomend-area-panel-item">
+                        <span><%= link_to "大阪", "/index?search=大阪&commit=探す" %></span>
+                        <img class = "panel-image" src = "/pexels-haugenzhays-zhang-1798631.jpg">
+                    </div>
+                    <div class = "recomend-area-panel-item">
+                        <span><%= link_to "京都", "/index?search=京都&commit=探す" %></span>
+                        <img class = "panel-image" src = "/pexels-pixabay-356629.jpg">
+                    </div>
+                    <div class = "recomend-area-panel-item">
+                        <span><%= link_to "沖縄", "/index?search=沖縄&commit=探す" %></span>
+                        <img class = "panel-image" src = "/pexels-ryutaro-tsukata-5220012.jpg">
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>

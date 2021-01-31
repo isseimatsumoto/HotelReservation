@@ -1,0 +1,150 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ルーム全体ページ(index)
+
+.room-container-field {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.search-results-count {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.room-item-box {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room-frame-inner a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.room-item-box {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+
+.room-image-show {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 20px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.room-profile {
+  width: 100%;
+  padding: 15px;
+}
+
+.room-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.room-profile-address {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.room-profile-fee {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+// ルーム詳細ページ(show)
+
+.room-show {
+  padding: 30px 0;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.room-show-left {
+    flex: 0 0 66%;
+    max-width: 66%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.room-show-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.room-show-detail {
+  display: flex;
+  align-items: center;
+}
+
+.room-show-detail-icon {
+  padding: 10px;
+}
+
+.host-icon {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.room-show-profile {
+  padding: 15px;
+}
+
+.room-show-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.room-show-profile-address {
+  font-size: 14px;
+}
+
+.room-show-detail-content {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.room-show-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.room-show-right {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.reservation-btn {
+  padding-top: 10px;
+}

@@ -1,0 +1,260 @@
+
+// 全体共通
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.flash {
+    color: white;
+    background: #001858;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    margin:0 auto;
+}
+
+// header部分
+
+header {
+    width: 100%;
+    height: 70px;
+    padding: 4px 30px;
+    background-color:#8bd3dd;
+}
+
+.site_title {
+    padding-top: 11px;
+    font-size: 25px;
+    font-weight: bold;
+    float: left;
+    text-decoration: none;
+    color: #fef6e4;
+}
+
+.topleft-input {
+    margin-top: 18px;
+    margin-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    float: left;
+}
+
+.topleft-search_btn {
+    display:none;
+}
+
+
+.btn-flat-border {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0px 5px;
+    text-decoration: none;
+    color:  #fef6e4;
+    border: solid 2px #fef6e4;
+    border-radius: 3px;
+    transition: .4s;
+    text-decoration: none;
+    color: #fef6e4;
+    margin-top: 17px;
+    float: right;
+}
+
+.btn-flat-border:hover {
+    background: #83e6fc;
+    color: #fef6e4;
+}
+
+.top_user_name {
+    float: right;
+    color: #fef6e4;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px;
+    margin-right: 10px;
+}
+
+.top_icon {
+    float: right;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.header-nav-menu {
+    background-color: #fff;
+    border: 1px solid #F6F8F9;
+    position: absolute;
+    top: 63px;
+    right: 9px;
+    padding: 15px;
+    z-index: 1000;
+    display: none;
+}
+
+.header-nav-menu li {
+    line-height: 30px;
+    font-size: 16px;
+    padding: 3px 5px;
+    list-style: none;
+}
+
+.header-nav-menu li a {
+    text-decoration: none;
+    color: #001858;
+}
+
+
+
+footer {
+    background-color: #8bd3dd;
+}
+
+footer div {
+    color: #fef6e4;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+// ユーザー情報、ルーム情報登録
+
+li {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-wrap: wrap;
+}
+
+.room-user-nav { 
+    flex: 0 0 16.666667%;
+    height: 100vh;
+    width: 100%;
+    padding: 30px 15px;
+}
+
+.tab-active {
+    border-right: 3px solid #4a90e2;
+    color:  #4a90e2;
+}
+
+.room-user-view {
+    background-color: #F6F8F9;
+    border-left: 2px solid #e2e2e2;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+.room-user-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 30px auto;
+}
+
+.update-content {
+    border-bottom: 1px solid #eaedef;
+    padding: 20px;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+ .registration-title {
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+ }
+
+.registration-title::after {
+    content: "必須";
+    color: #fff;
+    background-color: #ff0000a8;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 0 5px;
+}
+
+.registration-form-box {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.registration-form {
+    flex: 0 0 75%;
+    width: 75%;
+    float: right;
+    padding: 5px;
+    font-family: inherit;
+}
+
+.registration-form-btn {
+    background-color: #8bd3dd;
+    color: #fef6e4;
+    padding:5px 15px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 1px;
+    text-decoration: none;
+}
+
+// プロフィールページ
+
+.icon-image {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.update-content a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+// 登録済みルーム一覧、予約済みルーム一覧
+
+.room-posts {
+    padding: 30px 60px;
+}
+
+.registration-room-list-title {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+table {
+    width: 1200px;
+    border-collapse: collapse;
+    border-bottom: 1px solid #eaedef;
+}
+
+tr {
+    border-top: 1px solid #eaedef;
+    border-bottom: 1px solid #eaedef;
+}
+
+th {
+    padding: 8px 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 10px;
+}
+.room-posts-image {
+    width: 240px;
+    height: 140px;
+    object-fit: cover;
+    vertical-align: middle;
+}

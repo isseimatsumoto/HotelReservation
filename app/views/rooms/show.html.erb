@@ -1,0 +1,46 @@
+<div class="room-show">
+    <div class="row">
+      <div class="room-show-left">
+
+          <% if @room.image.attached? %>
+              <%= image_tag @room.image, class: "room-show-image" %>
+          <% end %>
+          
+        <div class="room-show-detail">
+            <div class="room-show-detail-icon">
+                <img class="host-icon" src="<%= "/user_images/default_icon.jpg" %>">
+            </div>
+            <div class="room-show-profile">
+                <p class="room-show-profile-name">
+                    <%= @room.name %>
+                </p>
+                <p class="room-show-profile-address">
+                    <%= @room.address %>
+                </p>
+            </div>
+        </div>
+            <p class="room-show-detail-content">
+                <%= @room.introduction %>
+            </p>
+      </div>
+
+      <div class="room-show-right">
+        <div class="room-show-nav">
+          <div class="price-icon">
+            <%= @room.fee %>円 / 日
+          </div>
+          <div class="reservation-btn"> 
+            <%= link_to("予約する",  "/rooms/#{@room.id}/reservations/new", {class: "registration-form-btn"}) %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="room-menus">
+      <% if @room.user_id == @current_user.id %>
+        <%= link_to("編集", "/rooms/#{@room.id}/edit", {class: "registration-form-btn"}) %>
+        <%= link_to("削除", "/rooms/#{@room.id}/destroy", {class: "registration-form-btn", method: "post"}) %>
+      <% end %>
+    </div>
+</div>
+
